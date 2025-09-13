@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { LogIn, LogOut } from "lucide-react";
 import { motion } from "framer-motion";
 import { login, logout, useSpotifyAuth } from "./uti/spotify_config";
-import BgImage from "./assets/jam_bg.jpg";
+import BgImage from "./assets/jam_bg_2.jpg";
+import BgImage_2 from "./assets/jam_bg.jpg";
 
 export default function App() {
   const { user, accessToken, error } = useSpotifyAuth();
@@ -13,7 +14,7 @@ export default function App() {
 
   return (
     <div
-      style={{ backgroundImage: `url(${BgImage})` }}
+      style={{ backgroundImage: `url(${BgImage})`, backgroundSize: "cover" }}
       className="min-h-screen bg-gradient-to-b from-slate-50 to-white p-6"
     >
       <div className="max-w-5xl mx-auto">
@@ -32,7 +33,8 @@ export default function App() {
             </div>
           ) : (
             <Button onClick={login}>
-              <LogIn className="w-4 h-4 mr-1" /> Log in with Spotify
+              <LogIn className="w-4 h-4 mr-1" /> Log in with Spotify to add your
+              Playlists
             </Button>
           )}
         </header>
@@ -43,6 +45,10 @@ export default function App() {
 
         <main className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <motion.section
+            style={{
+              backgroundImage: `url(${BgImage_2})`,
+              color: "#eef2ff",
+            }}
             layout
             className="md:col-span-2 bg-white rounded-xl shadow p-4"
           >
@@ -53,7 +59,14 @@ export default function App() {
             />
           </motion.section>
 
-          <motion.aside layout className="bg-white rounded-xl shadow p-4">
+          <motion.aside
+            style={{
+              backgroundImage: `url(${BgImage_2})`,
+              color: "#eef2ff",
+            }}
+            layout
+            className="bg-white rounded-xl shadow p-4"
+          >
             <Playlist
               playlistTracks={playlistTracks}
               setPlaylistTracks={setPlaylistTracks}
@@ -62,11 +75,13 @@ export default function App() {
             />
           </motion.aside>
         </main>
-
-        <footer className="mt-8 text-center text-sm text-gray-500">
-          Built with by SIBA ❤️ — Jammming
-        </footer>
       </div>
+      <footer
+        style={{ color: "black" }}
+        className="mt-8 text-center text-sm text-gray-500"
+      >
+        Built with ❤️ by SIBA — Jammming
+      </footer>
     </div>
   );
 }
