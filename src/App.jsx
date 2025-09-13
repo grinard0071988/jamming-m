@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { LogIn, LogOut } from "lucide-react";
 import { motion } from "framer-motion";
 import { login, logout, useSpotifyAuth } from "./uti/spotify_config";
-import { BgImage } from "./assets/jam_bg.jpg";
+import BgImage from "./assets/jam_bg.jpg";
 
 export default function App() {
   const { user, accessToken, error } = useSpotifyAuth();
