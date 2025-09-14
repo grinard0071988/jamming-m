@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const CLIENT_ID = "6ed45ea6867e468ab97168d75b56ee88"; //import.meta.env.VITE_SPOTIFY_CLIENT_ID
+const CLIENT_ID = "9307b19b8a844c5f9177cba8bee32517"; //import.meta.env.VITE_SPOTIFY_CLIENT_ID
 const REDIRECT_URI = https://grinard0071988.github.io/jamming-m/;
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
@@ -69,4 +69,5 @@ export async function spotifyFetch(endpoint, accessToken, opts = {}) {
   });
   return res.json();
 }
+
 
